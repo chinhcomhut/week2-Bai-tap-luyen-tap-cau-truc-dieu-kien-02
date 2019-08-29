@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh thue thu nhap ca nhan</title>
+</head>
+<body>
+<script>
+/*Bài toán thực tế:Viết chương trình tính thuế thu nhập cá nhân của một người theo thông tin sau đầy:
+----------------------------------------------------------
+Bậc 1: 4 triệu đồng/tháng 0%;
+Bậc 2: Trên 4 - 6 triệu đồng/tháng: 5%;
+Bậc 3: Trên 6 - 9 triệu đồng: 10%;
+Bậc 4: Trên 9 - 14 triệu đồng/tháng: 15%;
+Bậc 5: trên 14 - 24 triệu đồng/tháng: 20%;
+Bậc 6: Trên 24 - 44 triệu đồng/tháng: 25%;
+Bậc 7: Trên 44 - 84 triệu đồng/tháng: 30%;
+Bậc 8: Trên 84 triệu đồng: 35%.*/
+let thunhap=parseInt(prompt("Nhập vào thu nhập của một người/tháng:"));
+let t=1000000;
+let thue;
+if((thunhap>0)&&(thunhap<=4*t)){
+    document.write("Không phải đóng thuế (thuế = 0%)")
+}
+if((thunhap>4*t)&&(thunhap<=6*t)){
+    thue=thunhap*5/100;
+    document.write("Mức thuế là 5% qui ra tiền là:"+thue+"VNĐ")
+}
+if((thunhap>6*t)&&(thunhap<=9*t)){
+    thue=6*5*t/100+(thunhap-6*t)*10/100;
+    document.write("Mức thuế là 10% qui ra tiền là:"+thue+"VNĐ")
+}
+if((thunhap>9*t)&&(thunhap<=14*t)){
+    thue=6*5*t/100+3*10*t/100+(thunhap-9*t)*15/100;
+    document.write("Mức thuế là 15% qui ra tiền là:"+thue+"VNĐ")
+}
+if((thunhap>14*t)&&(thunhap<=24*t)){
+    thue=6*5*t/100+3*10*t/100+5*t*15/100+(thunhap-14*t)/100;
+    document.write("Mức thuế là 20% qui ra tiền là:"+thue+"VNĐ")
+}
+if((thunhap>24*t)&&(thunhap<=44*t)){
+    thue=6*5*t/100+3*10*t/100+5*t*15/100+10*t*20/100+(thunhap-24*t)*25/100;
+    document.write("Mức thuế là 25% qui ra tiền là:"+thue+"VNĐ")
+}
+if((thunhap>44*t)&&(thunhap<=84*t)){
+    thue=6*5*t/100+3*10*t/100+5*t*15/100+10*t*20/100+20*t*25/100+(thunhap-44*t)*25/100;
+    document.write("Mức thuế là 30% qui ra tiền là:"+thue+"VNĐ")
+}
+if(thunhap>84*t){
+    thue=6*5*t/100+3*10*t/100+5*t*15/100+10*t*20/100+20*t*25/100+40*t*30/100+(thunhap-84*t)*35/100;
+    document.write("Mức thuế là 35% qui ra tiền là:"+thue+"VNĐ")
+}
+</script>
+</body>
+</html>

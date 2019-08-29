@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra so nhap co phai tuoi khong</title>
+</head>
+<body>
+<script>
+    let tuoi = prompt("Nhập vào một số bất kì để kiểm tra:");
+    let lamtron=parseInt(tuoi);
+    if (tuoi - lamtron == 0 ){  //kiểm tra tuoi có phải là số nguyên hay không//
+        if((tuoi>0)&&(tuoi<120)){document.write("Đây là tuổi của người")}
+        else {document.write("Đây không phải là tuổi của người trong thế giới thực")}
+    }else {document.write("Yêu cầu nhập lại tuổi phải là một số nguyên")}
+</script>
+</body>
+</html>

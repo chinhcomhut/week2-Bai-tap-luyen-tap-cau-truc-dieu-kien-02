@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viet chuong trinh tinh gia dien</title>
+</head>
+<body>
+<script>
+    /*Bài toán thực tế: Tính tiền điện phải trả biết các thức tính tiền như sau
+1. 100Kwh định mức đầu tiên có đơn giá trung bình là 600 đ/kwh
+2. các kwh từ 101 --> 150 có đơn giá là 700 đ/kwh
+3. các kwh từ 151--> 200 có đơn giá là 900 đ/kwh
+4. các kwh từ 201 trở đi có đơn giá là 1100 đ/kwh*/
+    let kwh = parseInt(prompt("Nhập vào số Kwh của 1 hộ gia đình:"));
+    let tinhtien;
+    if((0<kwh)&&(kwh<=100)) {
+        tinhtien = kwh * 600;
+        document.write("Thành tiền:" + tinhtien + "VNĐ")
+    }
+    if((101<kwh)&&(kwh<=150)){
+        tinhtien=100*600+(kwh-100)*700;
+        document.write("Thành tiền:"+tinhtien+"VNĐ")
+    }
+    if((150<kwh)&&(kwh<=200)){
+        tinhtien=(100*600+150*700+(kwh-150)*900);
+        document.write("Thành tiền:"+tinhtien+"VNĐ")
+    }
+    if(kwh>201){
+        tinhtien=100*600+150*700+200*900+(kwh-200)*1100;
+        document.write("Thành tiền:"+tinhtien+"VNĐ")
+    }
+</script>
+</body>
+</html>
